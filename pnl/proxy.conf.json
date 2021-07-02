@@ -1,0 +1,7 @@
+{
+    "/ws/*": {
+        "target": "http://localhost/doch-panel/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

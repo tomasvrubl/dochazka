@@ -1,0 +1,47 @@
+
+
+<div class='cas-part'>
+ Dnes je <b>{{ cas | date:'dd.MM.yyyy'}}</b>
+</div>
+
+<div *ngIf="sosoba == null; else elseBlock">
+    <h1 class='cas'>{{ cas | date:'HH:mm:ss'}}</h1>
+    <ul  class='os'>
+        <li *ngFor="let o of osoba">
+            <button (click)="selOsoba(o)"> 
+                <i class="fas fa-user-circle"></i> 
+                <label>{{o.osoba}}</label>
+            </button>
+        </li>
+    </ul>    
+</div>
+
+
+<div *ngIf="resp != null" class="popup" id="popup">
+    {{resp.msg}}
+</div>
+
+
+<ng-template #elseBlock>
+    <div class='akce'>
+        <ul class='top'>
+            <li><button (click)="goHome()"><i class='fas fa-home'></i></button></li>
+            <li>
+                <label class='cas'>{{ cas | date:'HH:mm:ss'}}</label>
+            </li>
+            <li>
+                <i class="fas fa-user-circle"></i> 
+                <label>{{sosoba.osoba}}</label>  
+            </li>
+        </ul>
+
+        <ul class='bts'>
+            <li *ngFor="let b of akce">
+                <button (click)="provedAkci(b)">
+                    <i [class]="b.css"></i>
+                    {{b.lbl}}
+                </button>
+            </li>
+        </ul>
+    </div>
+</ng-template>
