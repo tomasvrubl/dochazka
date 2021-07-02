@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Terminal odvadeni",
+  "version": "2.1",
+  "minimum_chrome_version": "23",
+  "permissions": ["storage", "webview", "serial", "fullscreen"],
+  "icons": { "16": "icon_16.png", "128": "icon_128.png" },
+  "app": {
+    "background": {
+      "scripts": ["main.js", "mwserial.js"]
+    }    
+  }
+}

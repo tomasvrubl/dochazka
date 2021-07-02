@@ -1,0 +1,48 @@
+
+
+<div class='cas-part'>
+ Dnes je <b>{{ cas | date:'dd.MM.yyyy'}}</b>
+</div>
+
+
+<div *ngIf="resp != null" class="popup" id="popup">
+    {{resp.msg}}
+</div>
+
+<div *ngIf="popChip" class='pop-chip'>
+    <div>
+        <h1>{{sakce.lbl}}</h1>
+        <h2>Přilož čip</h2>
+        <img src="assets/rfid.png" />
+    
+    </div>
+    <div>
+        <button (click)="goBack()"><i class="fas fa-times css-cancel"></i> Storno</button>
+    </div>    
+</div>
+
+<div *ngIf="!popChip" class='akce'>
+
+    <ul *ngIf="!sosoba" class='top'>
+        <li>
+            <label class='cas'>{{ cas | date:'HH:mm:ss'}}</label>
+        </li>
+    </ul>
+    <ul *ngIf="sosoba" class='top sosoba'>
+        <li>
+            <label class='cas'>{{ cas | date:'HH:mm:ss'}}</label>
+        </li>
+        <li>
+            <label class='osoba'>{{ sosoba.osoba }}</label>
+        </li>
+    </ul>
+
+    <ul class='bts'>
+        <li *ngFor="let b of akce" class="btn-id-{{b.id}}">
+            <button (click)="provedAkci(b)">
+                <i [class]="b.css"></i>
+                {{b.lbl}}
+            </button>
+        </li>
+    </ul>
+</div>

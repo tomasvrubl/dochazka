@@ -1,0 +1,7 @@
+{
+    "/ws/*": {
+        "target": "http://localhost/doch-terminal/web/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

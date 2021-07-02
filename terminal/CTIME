@@ -1,0 +1,23 @@
+Skryti kurzoru 
+
+
+One option would be to install unclutter.
+
+Code: Select all
+
+sudo apt update
+sudo apt install unclutter
+
+Then use this command:
+
+Code: Select all
+
+unclutter -idle 0
+
+The mouse pointer will appear when moved.
+
+The command can be put in autostart
+
+Code: Select all
+
+/etc/xdg/lxsession/LXDE-pi/autostart
